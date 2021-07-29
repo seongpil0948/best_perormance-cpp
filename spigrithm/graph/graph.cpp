@@ -9,7 +9,7 @@ struct Edge
     {
         return this->weight < e.weight;
     }
-}
+};
 
 template <typename T>
 class Graph
@@ -27,7 +27,7 @@ public:
     // 정점 v에서 나가는 모든 에지를 반환
     auto edges(unsigned v) const
     {
-        vector<Edge<T> > edges_from_v;
+        vector<Edge<T>> edges_from_v;
         for (auto &e : edge_list)
         {
             if (e.src == v)
@@ -52,7 +52,7 @@ public:
 
 private:
     unsigned V; // 정점 개수
-    vector<Edge<T> > edge_list;
+    vector<Edge<T>> edge_list;
 };
 
 template <typename U>

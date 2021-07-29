@@ -76,15 +76,15 @@ public:
 // 트리도 그래프로 표현할 수 있으므로 최소 신장 트리도 Graph 객체로 반환합니다.
 // 다만 여기에는 사이클이 있으면 안됩니다.
 // 에지를 모두 추가한후, 정점 개수 별 디스조인트 셋 만들고
-// 최소 길이 에지를 추출해서 목적 정점에 도달한다.
+// 최소 길이 에지순으로 추출해서 목적 정점에 도달한다.
 template <typename T>
 Graph<T> minimum_spanning_tree(const Graph<T> &G)
 {
     // 에지 가중치를 이용한 최소 힙 구성
     priority_queue<
         Edge<T>,
-        vector<Edge<T> >,
-        greater<Edge<T> > >
+        vector<Edge<T>>,
+        greater<Edge<T>>>
         edge_min_heap;
 
     // 모든 에지를 최소 힙에 추가
@@ -123,7 +123,7 @@ int main()
     // 그래프 객체 생성
     Graph<T> G(9);
 
-    map<unsigned, vector<pair<unsigned, T> > > edge_map;
+    map<unsigned, vector<pair<unsigned, T>>> edge_map;
     edge_map[1] = {{2, 2}, {5, 3}};
     edge_map[2] = {{1, 2}, {5, 5}, {4, 1}};
     edge_map[3] = {{4, 2}, {7, 3}};
